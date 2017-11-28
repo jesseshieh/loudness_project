@@ -57,12 +57,12 @@ config :logger, level: :info
 #     config :loudness, Loudness.Endpoint, server: true
 #
 
-config :loudness, LoudnessWeb.Endpoint,
+config :loudness, Loudness.Endpoint,
   load_from_system_env: true,
   url: [host: "example.com", port: 4000],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
-config :loudness, LoudnessWeb.Endpoint,
+config :loudness, Loudness.Endpoint,
   server: true,
   secret_key_base: "${SECRET_KEY_BASE}"
 
