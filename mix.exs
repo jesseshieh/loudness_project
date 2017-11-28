@@ -28,7 +28,9 @@ defmodule Loudness.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:phoenix, "~> 1.3.0-rc"},
+    [
+     {:distillery, "~> 1.0.0"},
+     {:phoenix, "~> 1.3.0-rc"},
      {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_ecto, "~> 3.2"},
      {:phoenix_haml, "~> 0.2"},

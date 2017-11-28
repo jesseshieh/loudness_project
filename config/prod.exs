@@ -57,6 +57,19 @@ config :logger, level: :info
 #     config :loudness, Loudness.Endpoint, server: true
 #
 
-# Finally import the config/prod.secret.exs
-# which should be versioned separately.
-import_config "prod.secret.exs"
+config :loudness, LoudnessWeb.Endpoint,
+  load_from_system_env: true,
+  url: [host: "example.com", port: 4000],
+  cache_static_manifest: "priv/static/cache_manifest.json"
+
+config :loudness, LoudnessWeb.Endpoint,
+  server: true,
+  secret_key_base: "${SECRET_KEY_BASE}"
+
+config :loudness, Loudness.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  url: "${DATABASE_URL}",
+  database: "",
+  ssl: true,
+  pool_size: 1
+
